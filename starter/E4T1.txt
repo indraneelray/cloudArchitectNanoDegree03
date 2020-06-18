@@ -12,3 +12,9 @@ rather than using a wildcard selector. (Could also use a bucket policy)
   - Enable server-side encryption on the S3 bucket
   - Restrict the instance profile role to only read from S3 until the application requires the ability to write. 
     (e.g. when the user can use the application to perform CRUD operations on the recipes)
+
+In addition to using policies, Block Public Access, and ACLs, you can also restrict access to specific actions in these ways:
+
+  -Enable MFA Delete, which requires a user to authenticate using a multi-factor authentication (MFA) device before deleting an object or disabling bucket versioning.
+  -Set up MFA-protected API access, which requires that users authenticate with an AWS MFA device before they call certain Amazon S3 API operations.
+  -If you temporarily share an S3 object with another user, create a presigned URL to grant time-limited access to the object. For more information, see Share an Object with Others.

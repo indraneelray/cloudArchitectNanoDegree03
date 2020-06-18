@@ -17,3 +17,16 @@ Not encrypting the contents of the s3 buckets could allow unauthorized access to
 content to view the content within the buckets. The vpc-flow-logs may contain compromising 
 information that could directly or indirectly cause further security compromises if the rest of the infrastructure 
 is not set up correctly.
+
+# Poor practice 3
+The s3 buckets do not follow the principle of least privilege
+
+By default, all S3 buckets are private and can be accessed only by users that are explicitly granted access. 
+When using AWS, it's a best practice to restrict access to your resources to the people that absolutely need it. 
+Follow the principle of least privilege.
+Restrict access to your S3 buckets or objects by:
+1. Writing AWS Identity and Access Management (IAM) user policies
+2. Writing bucket policies that define access to specific buckets and objects. 
+3. Using Amazon S3 Block Public Access as a centralized way to limit public access. 
+4. Setting access control lists (ACLs) on your buckets and objects.
+
